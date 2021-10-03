@@ -30,6 +30,6 @@ unsigned long parseArg(int argc, char **argv)
 	{
 		fprintf(stderr, "Failed to stroul sleepsec.\n");
 		exit(1);
-	}	
+	}
 	return sleepsec;
 }
