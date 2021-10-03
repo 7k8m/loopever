@@ -1,0 +1,1 @@
+long parseArg(int argc, char **argv);

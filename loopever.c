@@ -3,13 +3,24 @@
 #include <unistd.h>
 #include <errno.h>
 
+#include "loopever.h"
+
 int main(int argc, char **argv)
 {
+	long sleepsec = parseArg(argc, argv);
+	while (1)
+	{
+		sleep(sleepsec);
+	}
+	return 0;
+}
 
+long parseArg(int argc, char **argv)
+{
 	if (argc < 2)
 	{
 		fprintf(stderr, "Specify sleepsec\n");
-		return 1;
+		exit(1);
 	}
 
 	char *endPtr = NULL;
@@ -18,12 +29,7 @@ int main(int argc, char **argv)
 	if (*endPtr != '\0' || errno != 0)
 	{
 		fprintf(stderr, "Failed to strol sleepsec.\n");
-		return 1;
-	}
-
-	while (1)
-	{
-		sleep(sleepsec);
-	}
-	return 0;
+		exit(1);
+	}	
+	return sleepsec;
 }
