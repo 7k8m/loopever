@@ -6,7 +6,7 @@
 int main(int argc, char **argv){
 	
 	if(argc < 2){
-		fprintf(stderr,"Specify sleep sec\n"); 
+		fprintf(stderr,"Specify sleepsec\n"); 
 		return 1;
 	}
 	
