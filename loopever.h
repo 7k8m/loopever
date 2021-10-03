@@ -1,1 +1,1 @@
-long parseArg(int argc, char **argv);
+unsigned long parseArg(int argc, char **argv);

@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-long parseArg(int argc, char **argv)
+unsigned long parseArg(int argc, char **argv)
 {
 	if (argc < 2)
 	{
@@ -25,10 +25,10 @@ long parseArg(int argc, char **argv)
 
 	char *endPtr = NULL;
 	errno = 0;
-	long sleepsec = strtol(*(argv + 1), &endPtr, 10);
+	unsigned long sleepsec = strtoul(*(argv + 1), &endPtr, 10);
 	if (*endPtr != '\0' || errno != 0)
 	{
-		fprintf(stderr, "Failed to strol sleepsec.\n");
+		fprintf(stderr, "Failed to stroul sleepsec.\n");
 		exit(1);
 	}	
 	return sleepsec;
