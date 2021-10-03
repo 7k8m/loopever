@@ -1,3 +1,3 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.13.4)
 project(looperver C)
 add_executable(loopever loopever.c)
