@@ -12,6 +12,6 @@ $ make install
 
 # Run
 ```
-$ loopever 0
-$ loopever 1
+$ loopever 0 # No sleep
+$ loopever 1 # Sleep for 1 second per loop
 ```
