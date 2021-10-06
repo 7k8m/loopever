@@ -43,7 +43,7 @@ void parseArg(int argc, char **argv, struct timespec *result)
 			sleepnsec < MIN_SLEEP_NANO_SEC ||
 			sleepnsec > MAX_SLEEP_NANO_SEC)
 		{
-			fprintf(stderr, "Failed to strol sleepnsec in the range\n");
+			fprintf(stderr, "Failed to strtol sleepnsec in the range\n");
 			exit(1);
 		}
 		result->tv_nsec = sleepnsec;
