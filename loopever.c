@@ -48,4 +48,8 @@ void parseArg(int argc, char **argv, struct timespec *result)
 		}
 		result->tv_nsec = sleepnsec;
 	}
+	else
+	{
+		result->tv_nsec = 0;
+	}
 }
