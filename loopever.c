@@ -6,6 +6,26 @@
 
 int main(int argc, char **argv)
 {
+	if (argc == 1)
+	{
+		loop();
+	}
+	else
+	{
+		loopWithSleep(argc, argv);
+	}
+	return 0;
+}
+
+void loop()
+{
+	while (1)
+	{
+	}
+}
+
+void loopWithSleep(int argc, char **argv)
+{
 	struct timespec sleeptime;
 	parseArg(argc, argv, &sleeptime);
 
@@ -13,16 +33,10 @@ int main(int argc, char **argv)
 	{
 		nanosleep(&sleeptime, NULL);
 	}
-	return 0;
 }
 
 void parseArg(int argc, char **argv, struct timespec *result)
 {
-	if (argc < 2)
-	{
-		fprintf(stderr, "Specify sleepsec\n");
-		exit(1);
-	}
 
 	char *endPtr = NULL;
 	errno = 0;
