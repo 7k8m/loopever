@@ -12,7 +12,9 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		loopWithSleep(argc, argv);
+		struct timespec sleeptime;
+		parseArg(argc, argv, &sleeptime);
+		loopWithSleep(&sleeptime);
 	}
 	return 0;
 }
@@ -24,14 +26,11 @@ void loop()
 	}
 }
 
-void loopWithSleep(int argc, char **argv)
+void loopWithSleep(struct timespec *sleepTime)
 {
-	struct timespec sleeptime;
-	parseArg(argc, argv, &sleeptime);
-
 	while (1)
 	{
-		nanosleep(&sleeptime, NULL);
+		nanosleep(sleepTime, NULL);
 	}
 }
 
