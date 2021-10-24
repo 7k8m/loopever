@@ -1,5 +1,5 @@
 # loopever
-Just loop forever, with sleep for specified time
+Just loop forever, with or without sleep for specified time
 
 # Build & Install
 ```
