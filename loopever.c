@@ -36,7 +36,14 @@ void loopWithSleep(struct timespec *sleepTime)
 
 void parseArg(int argc, char **argv, struct timespec *result)
 {
+	// check number of argument
+	if (argc < 2 || argc > 3)
+	{
+		fprintf(stderr, "Error: not enough arguments\n");
+		exit(1);
+	}
 
+	// convert first argument to integer
 	char *endPtr = NULL;
 	errno = 0;
 	const int sleepsec = strtol(*(argv + 1), &endPtr, 10);
@@ -47,6 +54,7 @@ void parseArg(int argc, char **argv, struct timespec *result)
 	}
 	result->tv_sec = sleepsec;
 
+	// convert second argument to integer
 	if (argc > 2)
 	{
 		const long sleepnsec = strtol(*(argv + 2), &endPtr, 10);
